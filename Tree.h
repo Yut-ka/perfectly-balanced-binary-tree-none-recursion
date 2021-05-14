@@ -98,13 +98,13 @@ void Inorder_traversal(std::string& str, Tree_Item* pRoot) {
 	}
 }
 
-void Preorder_Inorder_traversal(std::string& str, Tree_Item* pCurrent, int t = 0) {
+void Reverse_Inorder_traversal(std::string& str, Tree_Item* pCurrent, int t = 0) {
 	if (pCurrent != NULL) {
-		Preorder_Inorder_traversal(str, pCurrent->right, t + 1);
+		Reverse_Inorder_traversal(str, pCurrent->right, t + 1);
 		std::string line = "";
 		for (int i = 0; i < t; i++) line += "\t";
 		line = line + std::to_string(pCurrent->inf);
 		str = str + line + "\n";
-		Preorder_Inorder_traversal(str, pCurrent->left, t + 1);
+		Reverse_Inorder_traversal(str, pCurrent->left, t + 1);
 	}
 }
